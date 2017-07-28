@@ -15,6 +15,15 @@ The **vue-data-pager** deals with much of this complexity for you. The component
 * Allows for including multiple pagers in a single view.  
 * Flexible styling with Bootstrap & Semantic defaults.  
 
+Installation:
+```javascript
+npm install --save vue-data-pager
+import DataPager, { createPager } from 'vue-data-pager';
+
+// where DataPager represents the Vue component to be registered, and 'createPager'  
+// is a helper function that creates a pager object which stores the pager state.
+```
+
 
 The best way to integrate paging into an application using vue-data-pager, is to start out with a Vue component which can fetch data and display it without pagination. For example, displaying a list of contacts without paging might look like:
 
@@ -37,7 +46,7 @@ The best way to integrate paging into an application using vue-data-pager, is to
         },
         methods: {
             loadContacts({ ...pageArgs }) {
-                // make ajax request to contacts...
+                // make ajax request to contacts endpoint...
                 // then, assign response data to this.contacts
             },
         },
@@ -70,7 +79,7 @@ Adding pagination using vue-data-pager might look like:
         },
         methods: {
             loadContacts({ ...pageArgs }) {
-                // make ajax request to contacts...
+                // make ajax request to contacts endpoint...
                 // then, assign response data to pager.records
             },
             updateContacts(page){
